@@ -1,0 +1,23 @@
+<!--bootstrap start-->
+{# Load the tag library #}
+{% load bootstrap4 %}
+
+{% load i18n %}
+
+{# Load CSS and JavaScript #}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
+
+{# Display django.contrib.messages as Bootstrap alerts #}
+{% bootstrap_messages %}
+<!--bootstrap end-->
+
+
+<H1 style="margin: auto; text-align:center;">在线投递简历</H1>
+<hr>
+<form method="post">
+     <div style="margin: auto; width: 50%; ">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="提交">
+</form>
